@@ -1,0 +1,439 @@
+/* ============================================================
+   Universidad San Francisco de Asís — USFA
+   Solución del docente · Día 3: Introducción a CSS
+   Archivo: style.css
+   Fuentes cargadas desde perfil.html con <link>
+   ============================================================ */
+
+/* ── Variables institucionales ────────────────────────────── */ /* Sección de comentarios para organizar el código */
+:root { /* Define variables CSS personalizadas a nivel global */
+	--color-primario: #003087; /* Almacena el color azul principal de la institución */
+	--color-primario-osc: #001f5c; /* Guarda versión más oscura del color primario */
+	--color-primario-sua: #d6e4f0; /* Almacena tono suave del color primario */
+	--color-dorado: #c8a415; /* Define el color dorado institucional */
+	--color-dorado-cla: #f5e6a3; /* Guarda versión clara del color dorado */
+	
+	--color-fondo:        #f0f2f5; /* Color de fondo general de la página */
+	--color-superficie:   #ffffff; /* Color para tarjetas y superficies elevadas */
+	--color-borde:        #dde1e7; /* Color para bordes y separadores suaves */
+	--color-texto:        #1a1a2e; /* Color principal del texto del sitio */
+	--color-texto-sua:    #5c677d; /* Color para textos secundarios más suaves */
+	
+	--color-aprobado:     #1a7a45; /* Color verde para indicar calificaciones aprobadas */
+	--color-reprobado:    #c0392b; /* Color rojo para indicar calificaciones reprobadas */
+	
+	--fuente-cuerpo:  'Inter', sans-serif; /* Fuente principal para textos normales */
+	--fuente-titulo:  'Merriweather', serif; /* Fuente elegante para títulos y encabezados */
+	
+	--radio:     8px; /* Radio de borde pequeño para esquinas redondeadas */
+	--radio-lg:  12px; /* Radio de borde grande para elementos más grandes */
+	--sombra:    0 2px 8px rgba(0, 48, 135, 0.08); /* Sombra sutil para dar profundidad */
+} /* Cierra el bloque de variables raíz */
+
+/* ── Reset y base ─────────────────────────────────────────── */ /* Sección para resetear estilos por defecto */
+* , ::before, *::after { /* Selecciona todos los elementos y pseudo-elementos */
+	margin: 0; /* Elimina márgenes predeterminados del navegador */
+	padding: 0; /* Elimina rellenos predeterminados del navegador */
+	box-sizing: border-box; /* Hace que padding y border incluyan en el ancho */
+} /* Cierra el reset universal */
+
+html { /* Estilos base para el elemento html */
+	scroll-behavior: smooth; /* Permite desplazamiento suave al usar anclas */
+} /* Cierra estilos de html */
+
+body { /* Estilos generales para todo el cuerpo de la página */
+	font-family: var(--fuente-cuerpo); /* Aplica la fuente principal definida */
+	font-size: 16px; /* Establece tamaño base de texto legible */
+	font-weight: 400; /* Define grosor normal del texto */
+	line-height: 1.7; /* Mejora la legibilidad con espacio entre líneas */
+	color: var(--color-texto); /* Aplica color de texto principal */
+	background-color: var(--color-fondo); /* Define color de fondo general */
+} /* Cierra estilos del body */
+
+/* ── Tipografía general ───────────────────────────────────── */ /* Estilos para encabezados y párrafos */
+
+h1, h2, h3 { /* Aplica estilos comunes a los títulos principales */
+	font-family: var(--fuente-titulo); /* Usa fuente serif elegante para títulos */
+	line-height: 1.3; /* Espaciado cómodo para títulos */
+	color: var(--color-primario); /* Color azul institucional para títulos */
+} /* Cierra estilos comunes de títulos */
+
+h1 { font-size: 2rem; font-weight: 700; } /* Título principal grande y en negrita */
+
+h2 { font-size: 1.3rem; font-weight: 700; } /* Título secundario mediano y fuerte */
+
+h3 { font-size: 1.1rem; font-weight: 400; font-style: italic; } /* Título terciario más sutil */
+
+p { margin-bottom: 0.75rem; } /* Agrega espacio debajo de cada párrafo */
+
+p:last-child { margin-bottom: 0; } /* Evita espacio extra en el último párrafo */
+
+a { /* Estilos base para todos los enlaces */
+	color: var(--color-dorado); /* Color dorado para enlaces */
+	text-decoration: none; /* Quita subrayado por defecto */
+	transition: color 0.2s; /* Suaviza el cambio de color al interactuar */
+} /* Cierra estilos base de enlaces */
+
+a:hover { /* Efecto cuando el cursor pasa sobre un enlace */
+	color: var(--color-primario); /* Cambia a azul principal */
+	text-decoration: underline; /* Subraya el enlace al pasar el cursor */
+} /* Cierra efecto hover de enlaces */
+
+/* ── HEADER ───────────────────────────────────────────────── */ /* Estilos para la cabecera superior */
+
+header { /* Contenedor principal del encabezado */
+	background-color: var(--color-primario); /* Fondo azul institucional */
+	color: #ffffff; /* Texto blanco para contraste */
+	padding: 2.5rem 2rem 1.75rem; /* Espaciado interno generoso */
+	border-bottom: 5px solid var(--color-dorado); /* Borde dorado decorativo abajo */
+} /* Cierra estilos del header */
+
+header h1 { /* Título principal dentro del header */
+	font-family: var(--fuente-titulo); /* Fuente elegante para el nombre */
+	font-size: 1.9rem; /* Tamaño grande pero ajustado */
+	color: #ffffff; /* Blanco para resaltar en fondo azul */
+	margin-bottom: 0.3rem; /* Espacio pequeño debajo del título */
+	letter-spacing: 0.3px; /* Separación ligera entre letras */
+} /* Cierra estilos de h1 en header */
+
+header h3 { /* Subtítulo o descripción en el header */
+	font-family: var(--fuente-cuerpo); /* Fuente más limpia y legible */
+	font-size: 0.95rem; /* Tamaño ligeramente más pequeño */
+	font-style: normal; /* Quita cursiva si la heredaba */
+	font-weight: 400; /* Grosor normal */
+	color: var(--color-dorado-cla); /* Color dorado claro */
+	margin-bottom: 1.25rem; /* Espacio antes de la navegación */
+} /* Cierra estilos de h3 en header */
+
+/* ── NAVEGACIÓN ───────────────────────────────────────────── */ /* Estilos para la barra de navegación */
+
+nav { /* Contenedor de los enlaces de navegación */
+	display: flex; /* Organiza enlaces en fila flexible */
+	flex-wrap: wrap; /* Permite saltar a nueva línea si es necesario */
+	gap: 0.5rem; /* Espacio entre los botones de navegación */
+	margin-top: 0.5rem; /* Separación del subtítulo superior */
+} /* Cierra estilos del nav */
+
+nav a { /* Cada enlace dentro de la navegación */
+	color: #ffffff; /* Texto blanco sobre fondo azul */
+	font-family: var(--fuente-cuerpo); /* Fuente limpia para navegación */
+	font-size: 0.85rem; /* Texto compacto pero legible */
+	font-weight: 500; /* Grosor medio para destacar */
+	text-decoration: none; /* Sin subrayado */
+	padding: 0.35rem 0.9rem; /* Espacio interno para hacer botones */
+	border: 1px solid rgba(255, 255, 255, 0.35); /* Borde semi-transparente */
+	border-radius: 20px; /* Bordes muy redondeados tipo píldora */
+	transition: background-color 0.2s, color 0.2s, border-color 0.2s; /* Transiciones suaves */
+} /* Cierra estilos de enlaces nav */
+
+nav a:hover { /* Efecto al pasar cursor sobre botón de nav */
+	background-color: var(--color-dorado); /* Fondo dorado al hover */
+	color: var(--color-primario-osc); /* Texto azul oscuro */
+	border-color: var(--color-dorado); /* Borde dorado sólido */
+	text-decoration: none; /* Asegura que no se subraye */
+} /* Cierra efecto hover de nav */
+
+/* ── LAYOUT PRINCIPAL ─────────────────────────────────────── */ /* Estructura principal del contenido */
+
+main { /* Contenedor central de toda la información */
+	max-width: 860px; /* Ancho máximo para mejor legibilidad */
+	margin: 2.5rem auto; /* Centrado horizontal y espacio vertical */
+	padding: 0 1.5rem; /* Espacio lateral en pantallas grandes */
+	display: flex; /* Usa flexbox para organizar secciones */
+	flex-direction: column; /* Apila secciones verticalmente */
+	gap: 1.5rem; /* Espacio entre cada sección */
+} /* Cierra estilos de main */
+
+/* ── SECCIONES ────────────────────────────────────────────── */ /* Estilos comunes para todas las tarjetas/secciones */
+
+section { /* Cada bloque de contenido (tarjeta) */
+	background-color: var(--color-superficie); /* Fondo blanco limpio */
+	border: 1px solid var(--color-borde); /* Borde sutil gris */
+	border-radius: var(--radio-lg); /* Esquinas redondeadas grandes */
+	padding: 2rem; /* Espacio interno generoso */
+	box-shadow: var(--sombra); /* Sombra suave para elevación */
+} /* Cierra estilos de section */
+
+section h2 { /* Título de cada sección */
+	display: flex; /* Permite alinear ícono con texto */
+	align-items: center; /* Centra verticalmente el contenido */
+	gap: 0.6rem; /* Espacio entre línea dorada y texto */
+	font-size: 1.15rem; /* Tamaño adecuado para subtítulos */
+	color: var(--color-primario); /* Color azul institucional */
+	padding-bottom: 0.75rem; /* Espacio antes del borde inferior */
+	margin-bottom: 1.25rem; /* Separación con el contenido */
+	border-bottom: 2px solid var(--color-primario-sua); /* Línea decorativa azul clara */
+} /* Cierra estilos de h2 en secciones */
+
+section h2::before { /* Línea decorativa dorada antes del título */
+	content: ''; /* Crea elemento vacío para el estilo */
+	display: inline-block; /* Se comporta como caja inline */
+	width: 4px; /* Ancho de la barra decorativa */
+	height: 1.1em; /* Altura relativa al texto */
+	background-color: var(--color-dorado); /* Color dorado */
+	border-radius: 2px; /* Bordes redondeados de la barra */
+	flex-shrink: 0; /* Evita que se encoja */
+} /* Cierra pseudo-elemento before */
+
+/* ── SECCIÓN: SOBRE MÍ ────────────────────────────────────── */ /* Estilos específicos de la sección Sobre Mí */
+
+#sobre-mi .contenido-perfil { /* Contenedor flex de foto y texto */
+	display: flex; /* Organiza foto y texto en fila */
+	align-items: flex-start; /* Alinea al inicio vertical */
+	gap: 1.5rem; /* Espacio entre foto y texto */
+	flex-wrap: wrap; /* Permite apilar en pantallas pequeñas */
+} /* Cierra contenedor perfil */
+
+#sobre-mi img { /* Foto de perfil */
+	width: 120px; /* Ancho fijo de la imagen */
+	height: 120px; /* Alto fijo (cuadrada) */
+	border-radius: 50%; /* Forma circular */
+	border: 4px solid var(--color-dorado); /* Borde dorado grueso */
+	object-fit: cover; /* Recorta imagen manteniendo proporción */
+	flex-shrink: 0; /* Evita que se encoja */
+} /* Cierra estilos de imagen de perfil */
+
+#sobre-mi .texto-perfil { /* Contenedor del texto biográfico */
+	flex: 1; /* Ocupa todo el espacio restante */
+	min-width: 200px; /* Evita que se haga muy estrecho */
+} /* Cierra texto-perfil */
+
+#sobre-mi .texto-perfil p { /* Párrafos dentro de la biografía */
+	font-size: 1rem; /* Tamaño estándar legible */
+	color: var(--color-texto-sua); /* Color de texto más suave */
+	line-height: 1.8; /* Mayor espaciado para comodidad */
+} /* Cierra párrafos de perfil */
+
+/* ── SECCIÓN: LISTAS ──────────────────────────────────────── */ /* Estilos para listas personalizadas */
+
+ul { /* Lista sin viñetas predeterminadas */
+	list-style: none; /* Elimina puntos o números automáticos */
+	padding: 0; /* Quita relleno izquierdo por defecto */
+	display: flex; /* Usa flex para control vertical */
+	flex-direction: column; /* Apila elementos verticalmente */
+	gap: 0.5rem; /* Espacio entre cada ítem */
+} /* Cierra estilos de ul */
+
+ul li { /* Cada elemento de la lista */
+	font-size: 0.95rem; /* Tamaño ligeramente más pequeño */
+	padding: 0.55rem 1rem; /* Espacio interno cómodo */
+	background-color: var(--color-primario-sua); /* Fondo azul muy claro */
+	border-left: 3px solid var(--color-primario); /* Barra lateral azul */
+	border-radius: 0 var(--radio) var(--radio) 0; /* Redondeado solo a la derecha */
+	color: var(--color-primario-osc); /* Texto azul oscuro */
+	font-weight: 500; /* Grosor medio para destacar */
+	transition: background-color 0.15s, border-color 0.15s; /* Transición suave */
+	cursor: default; /* Indica que no es clickeable */
+} /* Cierra estilos de ítem de lista */
+
+ul li:hover { /* Efecto al pasar cursor sobre ítem */
+	background-color: var(--color-dorado-cla); /* Cambia a tono dorado claro */
+	border-left-color: var(--color-dorado); /* Barra lateral dorada */
+} /* Cierra hover de lista */
+
+/* ── SECCIÓN: TABLA DE CALIFICACIONES ────────────────────── */ /* Estilos para tabla de notas */
+
+.tabla-wrapper { /* Contenedor para scroll horizontal en tabla */
+	overflow-x: auto; /* Permite desplazamiento horizontal */
+	border-radius: var(--radio); /* Esquinas redondeadas */
+	border: 1px solid var(--color-borde); /* Borde sutil */
+} /* Cierra wrapper de tabla */
+
+table { /* Tabla de calificaciones */
+	width: 100%; /* Ocupa todo el ancho disponible */
+	border-collapse: collapse; /* Une bordes de celdas */
+	font-size: 0.9rem; /* Texto más compacto */
+	min-width: 360px; /* Ancho mínimo para evitar colapso */
+} /* Cierra estilos de tabla */
+
+thead { /* Cabecera de la tabla */
+	background-color: var(--color-primario); /* Fondo azul institucional */
+	color: #ffffff; /* Texto blanco */
+} /* Cierra thead */
+
+thead th { /* Cada celda de encabezado */
+	padding: 0.8rem 1.1rem; /* Espacio interno */
+	text-align: left; /* Alineación a la izquierda */
+	font-family: var(--fuente-cuerpo); /* Fuente sans-serif limpia */
+	font-weight: 600; /* Negrita media */
+	font-size: 0.82rem; /* Texto pequeño */
+	letter-spacing: 0.5px; /* Espaciado entre letras */
+	text-transform: uppercase; /* Mayúsculas para profesionalismo */
+} /* Cierra th de encabezado */
+
+tbody tr { /* Cada fila de datos */
+	border-bottom: 1px solid var(--color-borde); /* Línea separadora */
+	transition: background-color 0.12s; /* Transición suave al hover */
+} /* Cierra fila de tbody */
+
+tbody tr:last-child { /* Última fila de la tabla */
+	border-bottom: none; /* Sin línea inferior */
+} /* Cierra última fila */
+
+tbody tr:hover { /* Hover sobre filas de datos */
+	background-color: var(--color-primario-sua); /* Fondo azul muy claro */
+} /* Cierra hover de filas */
+
+tbody td { /* Cada celda de datos */
+	padding: 0.75rem 1.1rem; /* Espacio interno */
+	color: var(--color-texto); /* Color de texto normal */
+	vertical-align: middle; /* Centrado vertical del contenido */
+} /* Cierra td */
+
+.aprobado { /* Clase para notas aprobadas */
+	color: var(--color-aprobado); /* Verde institucional */
+	font-weight: 600; /* Negrita para destacar */
+} /* Cierra clase aprobado */
+
+.reprobado { /* Clase para notas reprobadas */
+	color: var(--color-reprobado); /* Rojo institucional */
+	font-weight: 600; /* Negrita para destacar */
+} /* Cierra clase reprobado */
+
+/* ── SECCIÓN: FORMULARIO ──────────────────────────────────── */ /* Estilos del formulario de contacto */
+
+form { /* Formulario completo */
+	display: flex; /* Usa flexbox para alinear campos */
+	flex-direction: column; /* Apila campos verticalmente */
+	gap: 1.1rem; /* Espacio entre campos */
+	max-width: 480px; /* Ancho máximo razonable */
+} /* Cierra estilos del form */
+
+.campo { /* Cada grupo label + input */
+	display: flex; /* Flex para apilar label e input */
+	flex-direction: column; /* Apilados verticalmente */
+	gap: 0.35rem; /* Espacio entre label e input */
+} /* Cierra contenedor de campo */
+
+label { /* Etiquetas de los campos */
+	font-size: 0.85rem; /* Texto pequeño */
+	font-weight: 600; /* Negrita para destacar */
+	color: var(--color-primario); /* Color azul institucional */
+	letter-spacing: 0.2px; /* Espaciado sutil */
+} /* Cierra estilos de label */
+
+input[type="text"], /* Input de texto normal */
+input[type="email"], /* Input de correo electrónico */
+textarea, /* Área de texto multilínea */
+select { /* Menú desplegable */
+	width: 100%; /* Ocupa todo el ancho del contenedor */
+	padding: 0.65rem 0.9rem; /* Espacio interno cómodo */
+	font-family: var(--fuente-cuerpo); /* Fuente consistente */
+	font-size: 0.95rem; /* Tamaño legible */
+	color: var(--color-texto); /* Color de texto normal */
+	background-color: var(--color-superficie); /* Fondo blanco */
+	border: 1.5px solid var(--color-borde); /* Borde gris */
+	border-radius: var(--radio); /* Esquinas redondeadas */
+	transition: border-color 0.2s, box-shadow 0.2s; /* Transiciones suaves */
+	outline: none; /* Quita contorno azul por defecto */
+} /* Cierra estilos de inputs */
+
+input[type="text"]:focus, /* Cuando el input texto tiene foco */
+input[type="email"]:focus, /* Cuando el email tiene foco */
+textarea:focus, /* Cuando el textarea tiene foco */
+select:focus { /* Cuando el select tiene foco */
+	border-color: var(--color-primario); /* Borde azul primario */
+	box-shadow: 0 0 0 3px rgba(0, 48, 135, 0.12); /* Sombra azul suave */
+} /* Cierra estados focus */
+
+textarea { /* Área de texto grande */
+	resize: vertical; /* Permite redimensionar solo verticalmente */
+	min-height: 100px; /* Altura mínima razonable */
+	line-height: 1.6; /* Espaciado cómodo para escribir */
+} /* Cierra textarea */
+
+button[type="submit"] { /* Botón de enviar formulario */
+	align-self: flex-start; /* Alinea a la izquierda */
+	padding: 0.7rem 2rem; /* Espacio interno horizontal generoso */
+	font-family: var(--fuente-cuerpo); /* Fuente consistente */
+	font-size: 0.95rem; /* Tamaño normal */
+	font-weight: 600; /* Negrita */
+	color: #ffffff; /* Texto blanco */
+	background-color: var(--color-primario); /* Fondo azul */
+	border: 2px solid var(--color-primario); /* Borde azul */
+	border-radius: 20px; /* Bordes muy redondeados */
+	cursor: pointer; /* Cambia cursor a mano */
+	letter-spacing: 0.3px; /* Espaciado sutil */
+	transition: background-color 0.2s, color 0.2s, transform 0.1s; /* Transiciones */
+} /* Cierra botón submit */
+
+button[type="submit"]:hover { /* Hover sobre botón enviar */
+	background-color: var(--color-dorado); /* Fondo dorado */
+	border-color: var(--color-dorado); /* Borde dorado */
+	color: var(--color-primario-osc); /* Texto azul oscuro */
+} /* Cierra hover del botón */
+
+button[type="submit"]:active { /* Cuando se presiona el botón */
+	transform: scale(0.97); /* Efecto de presión (ligero achique) */
+} /* Cierra estado active del botón */
+
+/* ── FOOTER ───────────────────────────────────────────────── */ /* Estilos del pie de página */
+
+footer { /* Pie de página */
+	background-color: var(--color-primario-osc); /* Fondo azul muy oscuro */
+	color: rgba(255, 255, 255, 0.6); /* Texto blanco semi-transparente */
+	text-align: center; /* Centrado horizontal */
+	padding: 1.5rem 2rem; /* Espaciado interno */
+	font-family: var(--fuente-cuerpo); /* Fuente limpia */
+	font-size: 0.82rem; /* Texto pequeño */
+	border-top: 4px solid var(--color-dorado); /* Borde dorado superior */
+} /* Cierra footer */
+
+footer strong { /* Texto en negrita dentro del footer */
+	color: rgba(255, 255, 255, 0.9); /* Blanco más visible */
+	font-weight: 600; /* Refuerza negrita */
+} /* Cierra strong en footer */
+
+/* ── DEMO BOX MODEL (Día 3) ───────────────────────────────── */ /* Caja de demostración de box model */
+
+.demo-boxmodel { /* Caja de ejemplo para enseñar box model */
+	width: fit-content; /* Ancho según su contenido */
+	max-width: 100%; /* No exceder el contenedor padre */
+	color: var(--color-primario); /* Color de texto azul */
+	font-weight: 600; /* Negrita */
+	font-size: 0.95rem; /* Tamaño normal */
+	text-align: center; /* Texto centrado */
+	background-color: var(--color-superficie); /* Fondo blanco */
+	padding: 24px 32px; /* Espacio interno visible */
+	border: 4px solid var(--color-primario); /* Borde grueso azul */
+	margin: 1.5rem 0; /* Espacio vertical */
+	border-radius: var(--radio); /* Esquinas redondeadas */
+} /* Cierra demo boxmodel */
+
+/* ── RESPONSIVE ───────────────────────────────────────────── */ /* Reglas para dispositivos móviles */
+
+@media (max-width: 640px) { /* Aplica solo en pantallas menores a 640px */
+
+	header { /* Ajustes del header en móvil */
+		padding: 1.5rem 1rem 1.25rem; /* Menos padding vertical y horizontal */
+	} /* Cierra header responsive */
+
+	header h1 { /* Título más pequeño en móvil */
+		font-size: 1.4rem; /* Reduce tamaño para caber mejor */
+	} /* Cierra h1 responsive */
+
+	main { /* Ajustes del contenedor principal */
+		padding: 0 0.75rem; /* Menos padding lateral */
+		margin: 1.5rem auto; /* Reduce margen superior */
+	} /* Cierra main responsive */
+
+	section { /* Tarjetas más compactas en móvil */
+		padding: 1.25rem 1rem; /* Menos espacio interno */
+	} /* Cierra section responsive */
+
+	#sobre-mi .contenido-perfil { /* Perfil en columna en móvil */
+		flex-direction: column; /* Apila foto sobre texto */
+		align-items: center; /* Centra horizontalmente */
+		text-align: center; /* Centra el texto */
+	} /* Cierra perfil responsive */
+
+	#sobre-mi img { /* Foto más pequeña en móvil */
+		width: 100px; /* Reduce ancho */
+		height: 100px; /* Reduce alto */
+	} /* Cierra img responsive */
+
+	button[type="submit"] { /* Botón full width en móvil */
+		width: 100%; /* Ocupa todo el ancho */
+		text-align: center; /* Centra texto */
+	}
+} /* Cierra media query responsive */
