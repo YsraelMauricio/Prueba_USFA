@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Materia;   // ← AGREGAR esta línea
 
 /**
- * PaginaController
+ * PaginaController ahora con Git
  *
  * Gestiona las 5 páginas del proyecto final SIS-500.
  * Conectado a routes/web.php mediante las 5 rutas definidas en el Ejercicio 3.
