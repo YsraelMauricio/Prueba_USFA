@@ -31,7 +31,7 @@
     <footer>
         <p class="resaltado">
             &copy; 2026 — Ysrael Mauricio Lopez Rossel ·
-            Ingeniería de Sistemas ·
+            Ingeniería de Sistemas SIS ·
             Universidad Privada San Francisco de Asís
         </p>
         <!-- &copy; es la entidad HTML para el símbolo © -->
