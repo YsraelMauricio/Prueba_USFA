@@ -3,7 +3,7 @@
 @section('titulo', 'Mis Materias')
 
 @section('contenido')
-<h2>Materias del semestre</h2>
+<h2>Materias del semestre Mejorado con Git</h2>
 
 <p>
     Promedio general: <strong>{{ $promedio }}</strong> |
