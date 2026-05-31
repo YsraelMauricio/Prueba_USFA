@@ -7,7 +7,7 @@
 
 /* ── Variables institucionales ────────────────────────────── */ /* Sección de comentarios para organizar el código */
 :root { /* Define variables CSS personalizadas a nivel global */
-	--color-primario: #003087; /* Almacena el color azul principal de la institución */
+	--color-primario: #17c82f; /* Almacena el color azul principal de la institución */
 	--color-primario-osc: #001f5c; /* Guarda versión más oscura del color primario */
 	--color-primario-sua: #d6e4f0; /* Almacena tono suave del color primario */
 	--color-dorado: #c8a415; /* Define el color dorado institucional */
