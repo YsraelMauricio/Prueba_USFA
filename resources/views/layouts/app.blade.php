@@ -30,7 +30,7 @@
 
     <footer>
         <p class="resaltado">
-            &copy; 2026 — Ysrael Lopez ·
+            &copy; 2026 — Ysrael Mauricio Lopez Rossel ·
             Ingeniería de Sistemas ·
             Universidad Privada San Francisco de Asís
         </p>
